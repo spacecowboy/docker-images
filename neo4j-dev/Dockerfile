@@ -8,7 +8,7 @@ RUN apt-get update -qqy && \
     apt-get install -y build-essential make gcc \
                        git mercurial python python3 \
                        python-pip python3-pip \
-                       locales openjdk-8-jdk-headless \
+                       openjdk-8-jdk-headless \
                        maven && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
