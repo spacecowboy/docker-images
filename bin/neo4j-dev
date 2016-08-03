@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+docker run --rm -it -v $(pwd):/workspace spacecowboy/neo4j-dev:latest "$@"
