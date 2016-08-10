@@ -3,7 +3,10 @@
 # Run the container but run as current user inside the container as well
 # by mapping the UID.
 
+#       --user="$(id -u):$(id -g)" \
 docker run --rm --interactive --tty \
-       --user="$(id -u):$(id -g)" \
+       --env="UID=$(id -u)" \
+       --env="GID=$(id -g)" \
+       --volume="${HOME}/.m2":/home/dev/.m2 \
        --volume="$(pwd)":/workspace spacecowboy/neo4j-dev:latest \
        "$@"
