@@ -12,8 +12,7 @@ if [ "" = "${GID}" ]; then
   exit 1
 fi
 
-mkdir -p /home/dev
 groupadd --gid "${GID}" dev
-useradd --no-create-home --home-dir /home/dev --uid "${UID}" --gid "${GID}" dev
+useradd --create-home --home-dir /home/dev --uid "${UID}" --gid "${GID}" dev
 
 sudo -u "#${UID}" -g "#${GID}" "$@"
