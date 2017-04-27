@@ -14,6 +14,7 @@ RUN apt-get update -qq \
           debhelper \
           rpm \
           uuid-runtime \
+          zip \
     && rm -rf /var/lib/apt/lists/*
 
 COPY userwrap.sh /bin/
